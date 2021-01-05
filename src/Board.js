@@ -11,7 +11,7 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasWon: true,
+      hasWon: false,
       board: this.createBoard(),
     };
   }
@@ -65,6 +65,13 @@ class Board extends Component {
     return board;
   }
 
+  handleClick = (e) => {
+    this.setState({
+      board: this.createBoard(),
+      hasWon: false,
+    });
+  };
+
   render() {
     if (this.state.hasWon) {
       return (
@@ -74,8 +81,8 @@ class Board extends Component {
             <div className="flux">win!</div>
           </div>
           <div className="Board-retry">
-            <button className="Board-button">
-              Play again <i class="fas fa-undo-alt"></i>
+            <button className="Board-button" onClick={this.handleClick}>
+              Play again <i className="fas fa-undo-alt"></i>
             </button>
           </div>
         </>
