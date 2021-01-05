@@ -1,3 +1,7 @@
 .Board {
   margin: 0 auto;
 }
+
+.Board-header {
+  font-size: 6em;
+}
