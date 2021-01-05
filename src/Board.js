@@ -11,7 +11,7 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasWon: false,
+      hasWon: true,
       board: this.createBoard(),
     };
   }
@@ -67,7 +67,19 @@ class Board extends Component {
 
   render() {
     if (this.state.hasWon) {
-      return <h1 className="Board-header">You won!</h1>;
+      return (
+        <>
+          <div className="Board-winner">
+            <div className="neon">You</div>
+            <div className="flux">win!</div>
+          </div>
+          <div className="Board-retry">
+            <button className="Board-button">
+              Play again <i class="fas fa-undo-alt"></i>
+            </button>
+          </div>
+        </>
+      );
     }
 
     let tableBoard = [];
@@ -88,6 +100,10 @@ class Board extends Component {
 
     return (
       <div>
+        <div className="Board-neons">
+          <div className="neon">Lights</div>
+          <div className="flux">Out</div>
+        </div>
         <table className="Board">
           <tbody>{tableBoard}</tbody>
         </table>
