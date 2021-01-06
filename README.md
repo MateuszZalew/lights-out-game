@@ -1,9 +1,11 @@
 # lights-out-game
 
---- 
-
 The point of this game is to turn all of the squares off. You can change which squares are lit on or off by clicking on them,
 but be careful cause every click on the square lights on/off its four neighbours: north, east, west and south one.
+
+# Credits
+
+https://codepen.io/Trinca/pen/NAvpWa - neon words
 
 # Getting Started with Create React App
 
